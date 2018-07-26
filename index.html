@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="task2" content="html,css,json">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Task2/CSS/style.css">
+
+</head>
+
+<body onload="dataGet()">
+    <section class="headsection">
+        <header class="headerclass">
+            <div class="headerfirst">
+                <div class="qualisicon">
+                    <i class="material-icons menuicon" id="menuid" onclick="openNav()">menu</i>
+                    <div id="mySidenav" class="sidenav" onmouseleave="closeNav()">
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> 
+                            <a href="#">About</a>
+                            <a href="#">Services</a>
+                            <a href="#">Clients</a>
+                            <a href="#">Contact</a>
+                          </div>
+                    <p class="qualisclass">QUALIS</p>
+                </div>
+                <div class="header-center">
+                    <div class="header-center-list" id="opt-rectangle">
+                        <button class="opt Rectangle-1" onclick="activecolor1(this)">
+                            <i class="fa fa-sticky-note file-icon-class" ></i>BROWSE</button>
+                        <button class="opt Rectangle-2" onclick="activecolor1(this)">
+                            <i class="fa fa-star star-icon-class"></i>FAVORITES</button>
+                        <button class="opt Rectangle-3" onclick="activecolor1(this)">
+                            <i class="fa fa-plus-circle plus-icon-class"></i>CREATE</button>
+                    </div>
+                </div>
+                <div>
+                <i class="fa fa-user-circle"  id="contactclass"  onclick="popfunc()" ></i>
+                        <span class="popuptext" id="myPopup" onmouseleave="popremove()">Hi Hello User<br>Login</span>
+                        </div>
+            </div>
+            <div class="headersecond">
+                <div class="navoption" id="navoption_id">
+                    <button onclick="activecolor()" class="option active" >RECOMMENDED</button>
+                    <button onclick="activecolor()" class="option" >FINANCE</button>
+                    <button onclick="activecolor()" class="option" >MARKETING</button>
+                    <button onclick="activecolor()" class="option" >SALES</button>
+                    <button onclick="activecolor()" class="option" >CLOUD</button>
+                    <button onclick="activecolor()" class="option" >...</button>
+
+                    </ul>
+                </div>
+                <div class="search-filter-section">
+                    <div class="search-section">
+                        <input type="text" placeholder="SEARCH" class="search-box">
+                        <i class="fa fa-search search-icon"></i>
+                    </div>
+                    <div class="filter-class">
+                        <i class="material-icons filter-icon-class" id="filter-id" > filter_list</i>
+                        <p class="filter-text">FILTER</p>
+                    </div>
+                </div>
+        </header>
+    </section>
+    <section class="main-container">
+        <div class="container-width">
+            <div class="view-icon-section">
+                <i class="material-icons view-icon-class" id="toggle" onclick="pp(); colorChange()" >view_module</i>
+                <p class="view-text">BASED ON LAST FEW JOBS YOU CREATED</p>
+            </div>
+            <div class="icon-box">
+            <i class="material-icons view-list-icon" id="content" onclick="dd(); colorChange()">view_list</i>
+            <ul class="box-section clearfix" id="replacejson">
+
+                <!-- <li class="box-class">
+                            <div>
+                                <i class="material-icons star-icon-box">star_border</i>
+                                </div>
+                                <div>
+                                <p class="finance-class">FINANCE</p>
+                                </div>
+                                 <p class="title">IDW_TD_TDL_SAM_SOC</p>
+                                <div class="target-class">
+                                    <p class="ericson">Ericson</p>
+                                    <hr>
+                                    <p class="hive-hadoop">Hive_Hadoop</p>
+                                </div>
+                                <div class="box-line1-class">
+                                    <p class="number">NA248C83C</p>
+                                    <p class="date">5/21/17</p>
+                                </div>
+                                <div class="box-line2-class">
+                                    <p class="type-class">Type 1</p>
+                                    <p class="type-class">09:21</p>
+                                </div>
+                                <div class="box-line3-class">
+                                    <p class="type-class">Robert Stone</p>
+                                    <p class="bar-class"></p>
+                                </div> 
+                                
+                               
+                                    
+                        </li>
+                        <li class="box-class">
+                            <div>
+                                <i class="material-icons star-icon-box">star_border</i>
+                                </div>
+                                <div>
+                                <p class="finance-class">FINANCE</p>
+                                </div>
+                                 <p class="title">IDW_TD_TDL_SAM_SOC</p>
+                                <div class="target-class">
+                                    <p class="ericson">Ericson</p>
+                                    <hr>
+                                    <p class="hive-hadoop">Hive_Hadoop</p>
+                                </div>
+                                <div class="box-line1-class">
+                                    <p class="number">NA248C83C</p>
+                                    <p class="date">5/21/17</p>
+                                </div>
+                                <div class="box-line2-class">
+                                    <p class="type-class">Type 1</p>
+                                    <p class="type-class">09:21</p>
+                                </div>
+                                <div class="box-line3-class">
+                                    <p class="type-class">Robert Stone</p>
+                                    <p class="bar-class"></p>
+                                </div> 
+                                
+                        </li>
+                        <li class="box-class">
+                            <div>
+                                <i class="material-icons star-icon-box">star_border</i>
+                                </div>
+                                <div>
+                                <p class="finance-class">FINANCE</p>
+                                </div>
+                                <p class="title">IDW_TD_TDL_SAM_SOC</p>
+                                <div class="target-class">
+                                    <p class="ericson">Ericson</p>
+                                    <hr>
+                                    <p class="hive-hadoop">Hive_Hadoop</p>
+                                </div>
+                                <div class="box-line1-class">
+                                    <p class="number">NA248C83C</p>
+                                    <p class="date">5/21/17</p>
+                                </div>
+                                <div class="box-line2-class">
+                                    <p class="type-class">Type 1</p>
+                                    <p class="type-class">09:21</p>
+                                </div>
+                                <div class="box-line3-class">
+                                    <p class="type-class">Robert Stone</p>
+                                    <p class="bar-class"></p>
+                                </div> 
+                        </li>
+                        <li class="box-class">
+                            <div>
+                                <i class="material-icons star-icon-box">star_border</i>
+                                </div>
+                                <div>
+                                <p class="finance-class">FINANCE</p>
+                                </div>
+                                 <p class="title">IDW_TD_TDL_SAM_SOC</p>
+                                <div class="target-class">
+                                    <p class="ericson">Ericson</p>
+                                    <hr>
+                                    <p class="hive-hadoop">Hive_Hadoop</p>
+                                </div>
+                                <div class="box-line1-class">
+                                    <p class="number">NA248C83C</p>
+                                    <p class="date">5/21/17</p>
+                                </div>
+                                <div class="box-line2-class">
+                                    <p class="type-class">Type 1</p>
+                                    <p class="type-class">09:21</p>
+                                </div>
+                                <div class="box-line3-class">
+                                    <p class="type-class">Robert Stone</p>
+                                    <p class="bar-class"></p>
+                                </div> 
+                        </li>
+                        <li class="box-class">
+                            <div>
+                                <i class="material-icons star-icon-box">star_border</i>
+                                </div>
+                                <div>
+                                <p class="finance-class">FINANCE</p>
+                                </div>
+                                <p class="title">IDW_TD_TDL_SAM_SOC</p>
+                                <div class="target-class">
+                                    <p class="ericson">Ericson</p>
+                                    <hr>
+                                    <p class="hive-hadoop">Hive_Hadoop</p>
+                                </div>
+                                <div class="box-line1-class">
+                                    <p class="number">NA248C83C</p>
+                                    <p class="date">5/21/17</p>
+                                </div>
+                                <div class="box-line2-class">
+                                    <p class="type-class">Type 1</p>
+                                    <p class="type-class">09:21</p>
+                                </div>
+                                <div class="box-line3-class">
+                                    <p class="type-class">Robert Stone</p>
+                                    <p class="bar-class"></p>
+                                </div>
+                        </li>
+                        <li class="box-class">
+                            <div>
+                                <i class="material-icons star-icon-box">star_border</i>
+                                </div>
+                                <div>
+                                <p class="finance-class">FINANCE</p>
+                                </div>
+                                <p class="title">IDW_TD_TDL_SAM_SOC</p>
+                                <div class="target-class">
+                                    <p class="ericson">Ericson</p>
+                                    <hr>
+                                    <p class="hive-hadoop">Hive_Hadoop</p>
+                                </div>
+                                <div class="box-line1-class">
+                                    <p class="number">NA248C83C</p>
+                                    <p class="date">5/21/17</p>
+                                </div>
+                                <div class="box-line2-class">
+                                    <p class="type-class">Type 1</p>
+                                    <p class="type-class">09:21</p>
+                                </div>
+                                <div class="box-line3-class">
+                                    <p class="type-class">Robert Stone</p>
+                                    <p class="bar-class"></p>
+                                </div>
+                        </li>
+                        <li class="box-class">
+                            <div>
+                                <i class="material-icons star-icon-box">star_border</i>
+                                </div>
+                                <div>
+                                <p class="finance-class">FINANCE</p>
+                                </div>
+                                <p class="title">IDW_TD_TDL_SAM_SOC</p>
+                                <div class="target-class">
+                                    <p class="ericson">Ericson</p>
+                                    <hr>
+                                    <p class="hive-hadoop">Hive_Hadoop</p>
+                                </div>
+                                <div class="box-line1-class">
+                                    <p class="number">NA248C83C</p>
+                                    <p class="date">5/21/17</p>
+                                </div>
+                                <div class="box-line2-class">
+                                    <p class="type-class">Type 1</p>
+                                    <p class="type-class">09:21</p>
+                                </div>
+                                <div class="box-line3-class">
+                                    <p class="type-class">Robert Stone</p>
+                                    <p class="bar-class"></p>
+                                </div>
+                        </li>
+                        <li class="box-class">
+                            <div>
+                                <i class="material-icons star-icon-box">star_border</i>
+                                </div>
+                                <div>
+                                <p class="finance-class">FINANCE</p>
+                                </div>
+                                <p class="title">IDW_TD_TDL_SAM_SOC</p>
+                                <div class="target-class">
+                                    <p class="ericson">Ericson</p>
+                                    <hr>
+                                    <p class="hive-hadoop">Hive_Hadoop</p>
+                                </div>
+                                <div class="box-line1-class">
+                                    <p class="number">NA248C83C</p>
+                                    <p class="date">5/21/17</p>
+                                </div>
+                                <div class="box-line2-class">
+                                    <p class="type-class">Type 1</p>
+                                    <p class="type-class">09:21</p>
+                                </div>
+                                <div class="box-line3-class">
+                                    <p class="type-class">Robert Stone</p>
+                                    <p class="bar-class"></p>
+                                </div>
+                        </li> -->
+
+            </ul>
+
+        </div>
+        </div>
+    </div>
+        <div id="snackbar" class="sideNavpop" onmouseleave="closeNavbottom()" >
+            <div id="popcode" >
+                <!-- <div class="popbox">
+                <table>
+              
+              <tr>
+                <td>key:value</td>
+                <td>key:value</td>
+                <td>key:value</td>
+              </tr>
+              <tr>
+                <td>key:value</td>
+                <td>key:value</td>
+                <td>key:value</td>
+              </tr>
+              <tr>
+                <td>key:value</td>
+                <td>key:value</td>
+                <td>key:value</td>
+              </tr>
+             
+            </table>
+            </div>
+            <button>VIEW MORE</button> -->
+            </div>
+        </div>
+    </section>
+
+</body>
+<script type="text/javascript" src="../Task2/SCRIPT/script.js"></script>
+
+</html>
